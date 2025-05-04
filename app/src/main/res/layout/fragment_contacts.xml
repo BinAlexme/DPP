@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ui.fragments.ContactsFragment">
+
+    <!-- Поле поиска -->
+    <SearchView
+        android:id="@+id/searchViewContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Поиск контактов"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Список контактов -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contactsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/searchViewContacts"
+        app:layout_constraintBottom_toTopOf="@id/incomingRequestsButton"
+        />
+
+    <!-- Кнопка для входящих запросов -->
+    <Button
+        android:id="@+id/incomingRequestsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Входящие запросы"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/searchUsersButton"
+        />
+
+    <!-- Кнопка для поиска пользователей -->
+    <Button
+        android:id="@+id/searchUsersButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Поиск пользователей"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
